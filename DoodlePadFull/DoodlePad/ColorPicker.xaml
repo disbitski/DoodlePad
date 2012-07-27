@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="SilverlightColorPicker.ColorPicker"
+    xmlns="http://schemas.microsoft.com/client/2007" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Canvas>
+  <Rectangle Canvas.Left="7" Canvas.Top="0" Width="42" Height="180" >
+    <Rectangle.Fill>
+      <LinearGradientBrush StartPoint ="0,0" EndPoint="0,1">
+        <GradientStop Offset="0.00" Color="#ffff0000"/>
+        <GradientStop Offset="0.17" Color="#ffffff00"/>
+        <GradientStop Offset="0.33" Color="#ff00ff00"/>
+        <GradientStop Offset="0.50" Color="#ff00ffff"/>
+        <GradientStop Offset="0.66" Color="#ff0000ff"/>
+        <GradientStop Offset="0.83" Color="#ffff00ff"/>
+        <GradientStop Offset="1.00" Color="#ffff0000"/>
+      </LinearGradientBrush>
+    </Rectangle.Fill>
+  </Rectangle>
+  <Canvas x:Name="HueSelector" Height="8" Width="7">
+    <Path Width="5" Height="8" Stretch="Fill" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFEBD2D2" Data="F1 M 276.761,316L 262.619,307.835L 262.619,324.165L 276.761,316 Z " RenderTransformOrigin="-0.35,0.469" Canvas.Left="-4.25" UseLayoutRounding="False" Canvas.Top="4.25" >
+    	<Path.RenderTransform>
+    		<CompositeTransform ScaleX="2.4" ScaleY="2.4"/>
+    	</Path.RenderTransform>
+    </Path>
+    <Path Width="5" Height="8" Canvas.Top="18.917" Canvas.Left="55.333" Stretch="Fill" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FFFFF6F6" Data="F1 M 276.761,316L 262.619,307.835L 262.619,324.165L 276.761,316 Z " UseLayoutRounding="False">
+      <Path.RenderTransform>
+      	<CompositeTransform Rotation="180" ScaleX="2.4" ScaleY="2.4"/>
+      </Path.RenderTransform>
+    </Path>
+  </Canvas>
+  <Rectangle x:Name="rectHueMonitor" Canvas.Top="0" Canvas.Left="7" Fill="Transparent" Width="42" Height="180" Stroke="Black" StrokeThickness="0" />
+  <Canvas Canvas.Top="0" Canvas.Left="57" RenderTransformOrigin="0.5,0.5">
+  	<Canvas.RenderTransform>
+  		<CompositeTransform ScaleX="0.8"/>
+  	</Canvas.RenderTransform>
+  	<Rectangle x:Name="rectSample" Width="180" Height="180" Fill="Red" RadiusY="4" RadiusX="4" Stroke="Black"/>
+  	<Rectangle x:Name="rectWhiteGradient" Width="180" Height="180" RadiusY="4" RadiusX="4" Stroke="Black">
+  		<Rectangle.Fill>
+  			<LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+  				<GradientStop Offset="0" Color="#ffffffff"/>
+  				<GradientStop Offset="1" Color="#00ffffff"/>
+  			</LinearGradientBrush>
+  		</Rectangle.Fill>
+  	</Rectangle>
+  	<Rectangle x:Name="rectBlackGradient" Width="180" Height="180" RadiusY="4" RadiusX="4" Stroke="Black">
+  		<Rectangle.Fill>
+  			<LinearGradientBrush StartPoint="0,1" EndPoint="0, 0">
+  				<GradientStop Offset="0" Color="#ff000000"/>
+  				<GradientStop Offset="1" Color="#00000000"/>
+  			</LinearGradientBrush>
+  		</Rectangle.Fill>
+  	</Rectangle>
+  	<Canvas x:Name="SampleSelector" Width="10" Height="10">
+  		<Ellipse Width="10" Height="10" StrokeThickness="3" Stroke="#FFFFFFFF"/>
+  		<Ellipse Width="10" Height="10" StrokeThickness="1" Stroke="#FF000000"/>
+  	</Canvas>
+  	<Rectangle x:Name="rectSampleMonitor" Fill="Transparent" Width="180" Height="180" RadiusY="4" RadiusX="4" Stroke="Black" />
+  </Canvas>
+
+  <Canvas Canvas.Top="180" Canvas.Left="0" Visibility="Collapsed">
+    <Rectangle x:Name="SelectedColor" Width="200" Height="20" Fill="Black" />
+    <Rectangle Width="60" Height="20" Fill="Black" />
+    <TextBlock x:Name="HexValue" Foreground="White" Width="100" Text="#FF0000" FontFamily="Arial" FontSize="11" Canvas.Top="4" Canvas.Left="5"  Height="10" />
+  </Canvas>
+</Canvas>
+</UserControl>
